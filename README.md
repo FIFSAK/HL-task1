@@ -49,17 +49,22 @@ Response {
 }
 ```
 
-## Run project
+### Installation
 
-- **Start project first time or after changes:**
-```bash
-make build
-```
-- **Otherwise** 
-```bash
-make up
-```
-- **Stop project**
-```bash
-make down
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/FIFSAK/Hl-task1
+   cd Hl-task1
+   ```
+2. **Build the Docker images:**
+   ```bash
+   make build
+   ```
+3. **Start the Docker containers:**
+   ```bash
+   make up
+   ```
+4. **Stop the Docker containers:**
+   ```bash
+   make down
+   ```
