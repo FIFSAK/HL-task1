@@ -3,50 +3,64 @@
 ## Routers
 
 ### Health Check
-- `GET /health-check`
-    - **Response:** `OK`
+- **Endpoint:** `GET /health-check`
+  - **Response:** `OK`
 
-### User Registration
-- `POST /register`
-    - **Body:** Use `multipart/form-data` to send the following fields:
-        - `login` (text): your username
-        - `password` (text): your password
+### Make Request
+- **Endpoint:** `POST /`
+  - **Body:** Используйте `json`, чтобы отправить следующие поля:
+    ```json
+    {
+      "method": "GET",
+      "url": "http://google.com",
+      "headers": {
+        "Authentication": "Basic bG9naW46cGFzc3dvcmQ=",
+        ...
+      }
+    }
+    ```
 
-### User Login
-- `GET /login`
-    - **Description:** Returns a JWT token.
-    - **Body:** Use `multipart/form-data` to send the following fields:
-        - `login` (text): your username
-        - `password` (text): your password
-- **Response:**
-```json lines
-{
-  "token": "your_jwt_token",
-  "refreshToken": "your_refresh_token"
-}
-```
+### Get Response
+- **Endpoint:** `GET /?id={response_id}`
+  - **Response:**
+    ```json
+    {
+      "id": "response_id",
+      "status": <HTTP-статус ответа стороннего сервиса>,
+      "headers": { <массив заголовков из ответа стороннего сервиса> },
+      "length": <длина содержимого ответа>
+    }
+    ```
 
-## Models structure
+## Models Structure
 
 ```sql
-Request{
-    method  string
-    url     string
-    headers json
-} 
+### Request
+Request {
+  method  string,
+  url     string,
+  headers json
+}
 
+### Response
 Response {
-  id INTEGER
-  status INTEGER
-  headers JSON
-  length INTEGER
+  id      INTEGER,
+  status  INTEGER,
+  headers JSON,
+  length  INTEGER
 }
 ```
 
 ## Run project
 
-**Start project first time or after changes** ```make build```
+- **Start project first time or after changes:**
+    ```bash
+  make build
 
-**otherwise** ```make up```
+-**Otherwise** 
+```bash
+make up
 
-**Stop project** ```make down```
+-**Stop project**
+```bash
+    make down
