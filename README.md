@@ -8,7 +8,7 @@
 
 ### Make Request
 - **Endpoint:** `POST /`
-  - **Body:** Используйте `json`, чтобы отправить следующие поля:
+  - **Body:**
     ```json
     {
       "method": "GET",
