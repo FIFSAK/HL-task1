@@ -64,7 +64,10 @@ Response {
    ```bash
    make up
    ```
-4. **Stop the Docker containers:**
+4. **Check the health of the server:**
+   Open your browser and go to http://localhost:8080/health-check to ensure the server is running properly.
+6. **Stop the Docker containers:**
    ```bash
    make down
    ```
+**LINK: https://hl-task1.onrender.com/**
