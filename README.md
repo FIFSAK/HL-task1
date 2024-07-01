@@ -35,14 +35,12 @@
 ## Models Structure
 
 ```sql
-### Request
 Request {
   method  string,
   url     string,
   headers json
 }
 
-### Response
 Response {
   id      INTEGER,
   status  INTEGER,
