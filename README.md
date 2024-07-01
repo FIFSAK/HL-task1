@@ -15,7 +15,7 @@
       "url": "http://google.com",
       "headers": {
         "Authentication": "Basic bG9naW46cGFzc3dvcmQ=",
-        ...
+
       }
     }
     ```
@@ -26,9 +26,9 @@
     ```json
     {
       "id": "response_id",
-      "status": <HTTP-статус ответа стороннего сервиса>,
-      "headers": { <массив заголовков из ответа стороннего сервиса> },
-      "length": <длина содержимого ответа>
+      "status": "HTTP-статус ответа стороннего сервиса",
+      "headers": { "массив заголовков из ответа стороннего сервиса" },
+      "length": "длина содержимого ответа"
     }
     ```
 
@@ -54,13 +54,14 @@ Response {
 ## Run project
 
 - **Start project first time or after changes:**
-    ```bash
-  make build
-
--**Otherwise** 
+```bash
+make build
+```
+- **Otherwise** 
 ```bash
 make up
-
--**Stop project**
+```
+- **Stop project**
 ```bash
-    make down
+make down
+```
