@@ -16,8 +16,8 @@ func main() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/health-check", handlers.HealthCheck).Methods(http.MethodGet)
-	router.HandleFunc("/", handlers.NewRequestHandler)
-	//router.HandleFunc("/", handlers.GetResponse).Methods(http.MethodGet)
+	router.HandleFunc("/", handlers.NewRequestHandler).Methods(http.MethodPost)
+	router.HandleFunc("/", handlers.GetStoredResponseHandler).Methods(http.MethodGet)
 
 	port := "8080"
 	server := &http.Server{
